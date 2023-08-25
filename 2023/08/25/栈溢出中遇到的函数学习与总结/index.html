@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>栈溢出中遇到的函数学习与总结 - Hexo</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="栈溢出中遇到的函数学习与总结fgets()函数：原型：1char *fgets(char *str, int n, FILE *stream)  作用：从指定的流 stream 读取一行，并把它存储在 str 所指向的字符串内。当读取 (n-1) 个字符时，或者读取到换行符时，或者到达文件末尾时，它会停止，具体视情况而定。 fopen()函数：原型：1FILE *fopen(const char">
+<meta property="og:type" content="article">
+<meta property="og:title" content="栈溢出中遇到的函数学习与总结">
+<meta property="og:url" content="https://wuxiankwy.github.io/2023/08/25/%E6%A0%88%E6%BA%A2%E5%87%BA%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="栈溢出中遇到的函数学习与总结fgets()函数：原型：1char *fgets(char *str, int n, FILE *stream)  作用：从指定的流 stream 读取一行，并把它存储在 str 所指向的字符串内。当读取 (n-1) 个字符时，或者读取到换行符时，或者到达文件末尾时，它会停止，具体视情况而定。 fopen()函数：原型：1FILE *fopen(const char">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-25T08:47:57.000Z">
+<meta property="article:modified_time" content="2023-08-25T07:56:15.320Z">
+<meta property="article:author" content="WuXianKwY">
+<meta name="twitter:card" content="summary">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1692954843300">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1692954843300">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1692954843300">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1692954843300"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://s3.bmp.ovh/imgs/2023/07/29/c015f7b9d559ce0e.png)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="WuXianKwY" class="mdui-btn mdui-btn-icon"><img src="https://s3.bmp.ovh/imgs/2023/07/29/8245bd214a45fb15.png" alt="WuXianKwY"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="WuXianKwY">
+            <img src="https://s3.bmp.ovh/imgs/2023/07/29/8245bd214a45fb15.png" alt="WuXianKwY" alt="WuXianKwY">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>7</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY" title="我的朋友(正在制作)">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友(正在制作)
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/donate" title="给我赞助">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                给我赞助
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=2t1ToHAIMLu3bpa3QHTu_xTwcD5Mylt3&authKey=aDskDr%2BGy5TIh5OsNTN2jp4SI%2BCmeqr5QFg5OGdXynAqh7RgDs3Q%2BO%2FgOnLdawyI&noverify=0&group_code=757442039"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/397860172"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://github.com/WuXianKwY/"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://www.zhihu.com/people/nexmoe"
+			target="_blank"
+			mdui-tooltip="{content: '知乎'}"
+			style="
+				color: rgb(30, 136, 229);
+				background-color: rgba(30, 136, 229, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-zhihu"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://twitter.com/nexmoe"
+			target="_blank"
+			mdui-tooltip="{content: 'Twitter'}"
+			style="
+				color: rgb(59, 151, 239);
+				background-color: rgba(59, 151, 239, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-twitter"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://nexmoe.com/atom.xml"
+			target="_blank"
+			mdui-tooltip="{content: 'RSS'}"
+			style="
+				color: rgb(247, 132, 34);
+				background-color: rgba(247, 132, 34, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-rss"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+
+        
+            
+            
+        
+            
+            
+            
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+
+        
+            
+            
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Recent Posts</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/08/25/%E6%A0%88%E6%BA%A2%E5%87%BA%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%80%BB%E7%BB%93/">栈溢出中遇到的函数学习与总结</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/23/not_the_same_3dsctf_2016%E2%80%94%E2%80%94%E7%BB%83%E4%B9%A0/">not_the_same_3dsctf_2016——练习</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/11/ciscn-2019-ne-5/">ciscn_2019_ne_5</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/11/CTF-WP/">CTF-WP</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/11/pwn%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">pwn学习记录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-link">
+		<ul>
+        
+            <li>
+                <a href="https://xiaoshu.app/" target="_blank" >
+                    <img src="https://s3.bmp.ovh/imgs/2023/08/15/9297586e75a1ce1f.jpg" alt="小舒同学"></img>
+                    <p>小舒同学</p>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://nexmoe.com/" target="_blank" >
+                    <img src="https://s3.bmp.ovh/imgs/2023/07/29/8245bd214a45fb15.png" alt="嘿！你好！"></img>
+                    <p>嘿！你好！</p>
+                </a>
+            </li>
+        
+		</ul>
+    </div>
+</div>
+<style>
+.nexmoe-widget-wrap .nexmoe-link ul li a {
+    text-align : center;
+}
+.nexmoe-widget-wrap .nexmoe-link ul li a img {
+    max-width : 100%;
+}
+.nexmoe-widget-wrap .nexmoe-link ul li a p {
+    margin: 10px 0;
+}
+</style>
+
+        
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2023 WuXianKwY
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://beian.miit.gov.cn/">鄂ICP备2020018486号</a>
+<br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">
+<img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a>
+
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://s3.bmp.ovh/imgs/2023/07/29/c015f7b9d559ce0e.png" alt="栈溢出中遇到的函数学习与总结" loading="lazy">
+            <h1>栈溢出中遇到的函数学习与总结</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年08月25日</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="栈溢出中遇到的函数学习与总结"><a href="#栈溢出中遇到的函数学习与总结" class="headerlink" title="栈溢出中遇到的函数学习与总结"></a>栈溢出中遇到的函数学习与总结</h1><h4 id="fgets-函数："><a href="#fgets-函数：" class="headerlink" title="fgets()函数："></a>fgets()函数：</h4><h5 id="原型："><a href="#原型：" class="headerlink" title="原型："></a>原型：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">char *fgets(char *str, int n, FILE *stream)</span><br></pre></td></tr></table></figure>
+
+<h5 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h5><p>从指定的流 stream 读取一行，并把它存储在 str 所指向的字符串内。当读取 (n-1) 个字符时，或者读取到换行符时，或者到达文件末尾时，它会停止，具体视情况而定。</p>
+<h4 id="fopen-函数："><a href="#fopen-函数：" class="headerlink" title="fopen()函数："></a>fopen()函数：</h4><h5 id="原型：-1"><a href="#原型：-1" class="headerlink" title="原型："></a>原型：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FILE *fopen(const char *filename, const char *mode)</span><br></pre></td></tr></table></figure>
+
+<h5 id="作用：-1"><a href="#作用：-1" class="headerlink" title="作用："></a>作用：</h5><p>使用给定的模式 mode 打开 filename 所指向的文件。</p>
+<h4 id="write-函数"><a href="#write-函数" class="headerlink" title="write()函数"></a>write()函数</h4><p><strong>原型：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssize_t write(int fd,const void*buf,size_t count);</span><br><span class="line">参数说明：</span><br><span class="line">  fd:是文件描述符（write所对应的是写，即就是1）</span><br><span class="line">  buf:通常是一个字符串，需要写入的字符串</span><br><span class="line">  count：是每次写入的字节数</span><br></pre></td></tr></table></figure>
+
+<h5 id="返回值"><a href="#返回值" class="headerlink" title="返回值:"></a>返回值:</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">成功：返回写入的字节数</span><br><span class="line">失败：返回-1并设置errno</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="read-函数"><a href="#read-函数" class="headerlink" title="read()函数"></a>read()函数</h4><h5 id="原型：-2"><a href="#原型：-2" class="headerlink" title="原型："></a>原型：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ssize_t read(int fd,void*buf,size_t count)</span><br><span class="line">参数说明：</span><br><span class="line">fd:      是文件描述符</span><br><span class="line">buf:     为读出数据的缓冲区；</span><br><span class="line">count:   为每次读取的字节数（是请求读取的字节数，读上来的数据保</span><br><span class="line">         存在缓冲区buf中，同时文件的当前读写位置向后移）</span><br></pre></td></tr></table></figure>
+
+<h5 id="返回值："><a href="#返回值：" class="headerlink" title="返回值："></a>返回值：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">成功：返回读出的字节数</span><br><span class="line">失败：返回-1，并设置errno，如果在调用read</span><br><span class="line">      之前到达文件末尾，则这次read返回0</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="execve-函数"><a href="#execve-函数" class="headerlink" title="execve()函数"></a>execve()函数</h4><h5 id="原型：-3"><a href="#原型：-3" class="headerlink" title="原型："></a>原型：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int execve(const char * filename,char * const argv[ ],char * const envp[ ])</span><br></pre></td></tr></table></figure>
+
+<h5 id="作用：-2"><a href="#作用：-2" class="headerlink" title="作用："></a>作用：</h5><p>execve()用来执行参数filename字符串所代表的文件路径，第二个参数是利用指针数组来传递给执行文件，并且需要以空指针(NULL)结束，最后一个参数则为传递给执行文件的新环境变量数组。</p>
+<h4 id="printf-函数"><a href="#printf-函数" class="headerlink" title="printf()函数"></a>printf()函数</h4><h5 id="原型：-4"><a href="#原型：-4" class="headerlink" title="原型："></a>原型：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;%d %d %d ......&quot;,count,count,count,count,count,......);</span><br></pre></td></tr></table></figure>
+
+<h5 id="作用：-3"><a href="#作用：-3" class="headerlink" title="作用："></a>作用：</h5><p>将任意数量的参数压入栈中，函数在调用的过程中，传入函数的参数从右到左逐个压入栈中。</p>
+
+    <p><img src="https://s3.bmp.ovh/imgs/2023/08/25/5d9bf97786040a97.jpg" loading="lazy"></p>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>WuXianKwY<br>
+        <strong>Link：</strong><a href="https://wuxiankwy.github.io/2023/08/25/%E6%A0%88%E6%BA%A2%E5%87%BA%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%80%BB%E7%BB%93/" title="https:&#x2F;&#x2F;wuxiankwy.github.io&#x2F;2023&#x2F;08&#x2F;25&#x2F;%E6%A0%88%E6%BA%A2%E5%87%BA%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%80%BB%E7%BB%93&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;wuxiankwy.github.io&#x2F;2023&#x2F;08&#x2F;25&#x2F;%E6%A0%88%E6%BA%A2%E5%87%BA%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%80%BB%E7%BB%93&#x2F;</a><br>
+        
+            <strong>内网映射搭建了个本机我的世界多模组服务器，暑假可以一起来玩ya
+
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1692954843285"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          扫码加入QQ群一起玩！
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E6%BA%A2%E5%87%BA%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">栈溢出中遇到的函数学习与总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fgets-%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">fgets()函数：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%EF%BC%9A"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">原型：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="toc-number">1.0.0.1.2.</span> <span class="toc-text">作用：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fopen-%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">fopen()函数：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%EF%BC%9A-1"><span class="toc-number">1.0.0.2.1.</span> <span class="toc-text">原型：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A-1"><span class="toc-number">1.0.0.2.2.</span> <span class="toc-text">作用：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#write-%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">write()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">1.0.0.3.1.</span> <span class="toc-text">返回值:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#read-%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">read()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%EF%BC%9A-2"><span class="toc-number">1.0.0.4.1.</span> <span class="toc-text">原型：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%9A"><span class="toc-number">1.0.0.4.2.</span> <span class="toc-text">返回值：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#execve-%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">execve()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%EF%BC%9A-3"><span class="toc-number">1.0.0.5.1.</span> <span class="toc-text">原型：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A-2"><span class="toc-number">1.0.0.5.2.</span> <span class="toc-text">作用：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#printf-%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">printf()函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%EF%BC%9A-4"><span class="toc-number">1.0.0.6.1.</span> <span class="toc-text">原型：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A-3"><span class="toc-number">1.0.0.6.2.</span> <span class="toc-text">作用：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="Search"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
